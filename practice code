@@ -1,0 +1,32 @@
+import random 
+
+def slots():
+    symbols = ["X", "Y", "Z", "A", "B", "C"]
+    pr = set()
+
+    while True:
+        while True:
+            num1 = random.randint(0,5)
+            num2 = random.randint(0,5)
+            num3 = random.randint(0,5)
+            cr = (num1, num2, num3)
+
+            if cr not in pr: #check the previous results
+                pr.add(cr) #add to the rest of the results
+                break
+
+        print(symbols[num1], symbols[num2], symbols[num3])   
+
+        if num1 == num2 == num3:
+            print("YOU WON")
+
+        if len(pr) == 216:
+            print("resetting please wait...")
+            pr.clear() #clears the set for fresh start
+
+        replay = input("\nSpin again? y/n: ").lower()
+        if replay != "y":
+            print("Thanks for playing")
+            break
+            
+slots()
