@@ -1,3 +1,5 @@
+#simple slots game, can be used to practice features such as adding betting systems and making better visuals
+
 import random 
 
 def slots():
